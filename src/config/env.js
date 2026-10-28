@@ -1,4 +1,13 @@
-import 'dotenv/config'
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config({ path: path.join(__dirname, '.env') });
+
+export const port = Number(process.env.PORT || 3000);
 
 export const database = {
     host: process.env.DB_HOST || 'localhost',
@@ -6,4 +15,4 @@ export const database = {
     database: process.env.DB_NAME,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD
-}
+};
