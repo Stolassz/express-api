@@ -1,11 +1,24 @@
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import fs from 'node:fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-dotenv.config({ path: path.join(__dirname, '.env') });
+const candidatePaths = [
+    path.resolve(__dirname, '..', '..', '.env'),
+    path.resolve(process.cwd(), '.env'),
+    path.resolve(__dirname, '.env')
+];
+
+const envFilePath = candidatePaths.find((candidate) => fs.existsSync(candidate));
+
+if (envFilePath) {
+    dotenv.config({ path: envFilePath });
+} else {
+    dotenv.config();
+}
 
 export const port = Number(process.env.PORT || 3000);
 
