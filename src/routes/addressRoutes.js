@@ -1,7 +1,7 @@
 import express from 'express';
-import { addresses } from '../repositories/index.js';
+import { addresses } from '../repository/index.js';
 import createController from '../controllers/resourceController.js';
-import asyncRoute from './asyncRoute.js';
+import asyncRoute from './asyncRouter.js';
 
 const controller = createController(addresses, {
   required: ['street', 'number', 'neighborhood', 'city', 'state', 'zipCode'],

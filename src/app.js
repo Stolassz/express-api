@@ -4,7 +4,7 @@ import { notFound, errorHandler } from './middlewares/errorHandler.js';
 
 const app = express();
 app.use(express.json());
-app.get('/health', (_req, res) => res.json({ status: 'ok' }));
+app.get('/', (_req, res) => res.json({ status: 'ok' }));
 app.use('/api', routes);
 app.use(notFound);
 app.use(errorHandler);

@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { jwtSecret } from '../config/env.js';
 import { AppError } from '../shared/errors.js';
-import { users } from '../repositories/index.js';
+import { users } from '../repository/index.js';
 
 async function authenticate(req, _res, next) {
   try {

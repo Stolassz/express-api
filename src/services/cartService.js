@@ -1,4 +1,4 @@
-import { carts, products } from '../repositories/index.js';
+import { carts, products } from '../repository/index.js';
 import { AppError } from '../shared/errors.js';
 import { validarQuantidade } from '../validators/cartValidator.js';
 

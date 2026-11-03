@@ -1,7 +1,7 @@
 import express from 'express';
 import { requireAdmin } from '../middlewares/auth.js';
 import controller from '../controllers/productController.js';
-import asyncRoute from './asyncRoute.js';
+import asyncRoute from './asyncRouter.js';
 
 const router = express.Router();
 router.get('/', asyncRoute(controller.list));

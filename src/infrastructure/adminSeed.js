@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import { users } from '../repositories/index.js';
+import { users } from '../repository/index.js';
 import { adminEmail, adminPassword } from '../config/env.js';
 
 async function criarAdminInicial() {

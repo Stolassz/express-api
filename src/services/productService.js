@@ -1,4 +1,4 @@
-import { products } from '../repositories/index.js';
+import { products } from '../repository/index.js';
 import criarServico from './resourceService.js';
 
 const servico = criarServico(products, { required: ['name', 'price', 'stock'] });

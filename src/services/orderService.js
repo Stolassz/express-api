@@ -1,4 +1,4 @@
-import { carts, orders, products } from '../repositories/index.js';
+import { carts, orders, products } from '../repository/index.js';
 import { AppError } from '../shared/errors.js';
 
 async function criar(userId) {

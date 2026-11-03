@@ -1,6 +1,6 @@
 import express from 'express';
 import * as controller from '../controllers/cartController.js';
-import asyncRoute from './asyncRoute.js';
+import asyncRoute from './asyncRouter.js';
 
 const router = express.Router();
 router.get('/', asyncRoute(controller.getCart));
