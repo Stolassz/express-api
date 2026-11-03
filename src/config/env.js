@@ -1,5 +1,7 @@
 import 'dotenv/config'
 
+export const jwtSecret = process.env.JWT_SECRET;
+export const jwtExpiresIn = process.env.JWT_EXPIRES_IN;
 export const port = Number(process.env.PORT || 3000);
 export const database = {
     host: process.env.DB_HOST || 'localhost',
